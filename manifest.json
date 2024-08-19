@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "IP Address Opener",
+    "version": "1.0",
+    "description": "Open IP addresses in the browser.",
+    "action": {
+        "default_popup": "ip_opener.html"
+        // "default_icon": {
+        //     "16": "icon16.png",
+        //     "48": "icon48.png",
+        //     "128": "icon128.png"
+        // }
+    },
+    "permissions": ["storage", "tabs", "contextMenus", "activeTab", "scripting"],
+    "background": {
+        "service_worker": "background.js"
+    }
+    // "icons": {
+    //     "16": "icon16.png",
+    //     "48": "icon48.png",
+    //     "128": "icon128.png"
+    // }
+}

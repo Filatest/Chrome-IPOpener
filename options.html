@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>配置页面</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .modal-content {
+      background-color: transparent; /* 设置表格背景透明 */
+      margin: 15% auto; /* 垂直居中 */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 30%; /* 设置宽度 */
+    }
+    table {
+      width: 100%; /* 表格占据容器的全部宽度 */
+      border-collapse: collapse; /* 边框合并 */
+      background-color: transparent; /* 表格背景透明 */
+      border: none; /* 移除表格边框 */
+    }
+    th, td {
+      padding: 8px; /* 内容与边框的距离 */
+      text-align: left; /* 文本左对齐 */
+      border-bottom: none; /* 移除底部边框 */
+    }
+    th {
+      background-color: transparent; /* 表头背景颜色透明 */
+      font-weight: bold; /* 加粗字体 */
+    }
+    .form-control {
+      width: 100%; /* 输入框占据单元格的全部宽度 */
+    }
+    .modal-footer {
+      justify-content: flex-end; /* 使保存按钮靠右显示 */
+      display: flex; /* 使保存按钮和消息水平排列 */
+      align-items: center; /* 垂直居中对齐 */
+    }
+    .success-message {
+      color: green;
+      margin-right: 10px; /* 添加提示信息与按钮之间的间距 */
+    }
+  </style>
+</head>
+<body>
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">插件配置</h5>
+        </div>
+        <div class="modal-body">
+          <form>
+            <table>
+              <tr>
+                <th>Protocol:</th>
+                <th>Base IP Prefix:</th>
+                <th>Port:</th>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" id="protocol" placeholder="e.g., http"></td>
+                <td><input type="text" class="form-control" id="base_ip_prefix" placeholder="e.g., 192.168.1"></td>
+                <td><input type="text" class="form-control" id="port" placeholder="e.g., 8080"></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+        <div class="modal-footer">
+
+          <span id="success-message" class="success-message" style="display:none;"></span>
+          <button type="button" class="btn btn-primary" id="save">保存设置</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

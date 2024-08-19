@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"> <!-- 添加这行来声明字符集 -->
+  <style>
+    :root {
+      --padding: 10px;
+      --input-border: 1px solid #ccc;
+      --input-border-radius: 4px;
+      --input-padding: 8px;
+      --button-background: #007bff;
+      --button-color: #fff;
+      --button-border: none;
+      --button-border-radius: 4px;
+      --button-padding: 8px 16px;
+      --button-active-background: #0056b3; /* 更深一点的蓝色 */
+      /* 在原有样式的基础上添加 */
+      input::placeholder {
+        color: #999; /* 默认颜色 */
+      }
+
+      input.invalid::placeholder {
+        color: red; /* 输入错误时的颜色 */
+      }
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: var(--padding);
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    #inputField {
+      flex-grow: 1;
+      margin-right: 5px;
+      border: var(--input-border);
+      border-radius: var(--input-border-radius);
+      padding: var(--input-padding);
+    }
+
+    button {
+      flex-shrink: 0;
+      background-color: var(--button-background);
+      color: var(--button-color);
+      border: var(--button-border);
+      border-radius: var(--button-border-radius);
+      padding: var(--button-padding);
+      cursor: pointer;
+    }
+
+    button:active {
+      background-color: var(--button-active-background); /* 点击时加深颜色 */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input type="text" id="inputField" placeholder="Enter IP address or hostname">
+    <button id="connectButton">Connect</button>
+  </div>
+
+  <script src="ip_opener.js"></script>
+</body>
+</html>
