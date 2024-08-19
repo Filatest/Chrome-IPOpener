@@ -4,7 +4,7 @@
     "version": "1.0",
     "description": "Open IP addresses in the browser.",
     "action": {
-        "default_popup": "ip_opener.html"
+        "default_popup": "/content/ip_opener.html"
         // "default_icon": {
         //     "16": "icon16.png",
         //     "48": "icon48.png",
@@ -13,7 +13,7 @@
     },
     "permissions": ["storage", "tabs", "contextMenus", "activeTab", "scripting"],
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "./background/background.js"
     }
     // "icons": {
     //     "16": "icon16.png",
