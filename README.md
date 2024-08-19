@@ -37,13 +37,14 @@
 
 ## 安装
 
-1. **从 Chrome Web Store 安装**：直接访问 [Chrome Web Store](https://chrome.google.com/webstore) 下载并安装此扩展。
+<!--1. **从 Chrome Web Store 安装**：直接访问 [Chrome Web Store](https://chrome.google.com/webstore) 下载并安装此扩展。-->
 2. **手动安装**：
    - 下载最新的 ZIP 文件。
    - 在 Chrome 浏览器中打开 `扩展程序` 页面（输入 `chrome://extensions/`）。
    - 启用 `开发者模式`。
    - 点击 `加载已解压的扩展程序`，选择下载的 ZIP 文件解压后的目录。
 
+<!--
 ## 贡献
 
 如果您发现任何问题或有改进的想法，请随时提交 Issue 或 Pull Request。
@@ -57,3 +58,4 @@
 如果您有任何问题或建议，请随时联系我们！
 
 ---
+-->
