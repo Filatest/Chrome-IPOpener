@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
         port = items.port || port;
         base_ip_prefix = items.base_ip_prefix || base_ip_prefix;
 
+        // 在页面加载时检查剪贴板内容
+        checkClipboardContent();
+
         connectButton.addEventListener('click', function () {
             validateAndOpenBrowser(inputField.value);
         });
@@ -34,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
             inputField.placeholder = "Enter IP address or hostname";
         });
 
+
+        
         function validateAndOpenBrowser(ip) {
             fullIp = ip;  // 初始化 fullIp
 
@@ -96,6 +101,56 @@ document.addEventListener('DOMContentLoaded', function () {
         function openBrowser(ip) {
             chrome.tabs.create({
                 url: `${protocol}://${ip}:${port}`
+            });
+        }
+        
+        // 检查剪贴板内容并自动填充到输入框
+        function checkClipboardContent() {
+            // 检查是否已经拥有权限
+            chrome.permissions.contains({ permissions: ['clipboardRead'] }, function (result) {
+                if (result) {
+                    // 已经有权限，直接读取剪贴板
+                    // alert('有权限');
+                    navigator.clipboard.readText()
+                        .then(clipboardContent => {
+                            if (isValidIPAddress(clipboardContent) || isValidHostname(clipboardContent)) {
+                                inputField.value = clipboardContent;
+                                validateInput();  // 验证并可能更改样式
+                            } else {
+                                inputField.value = '';
+                            }
+                        })
+                        .catch(err => {
+                            console.error('Failed to read clipboard contents: ', err);
+                            inputField.value = '';
+                            alert('无法读取剪贴板内容，请确保您已授予访问权限。');
+                        });
+                } else {
+                    // 请求权限
+                    chrome.permissions.request({ permissions: ['clipboardRead'] }, function (granted) {
+                        if (granted) {
+                            // 用户同意，读取剪贴板
+                            navigator.clipboard.readText()
+                                .then(clipboardContent => {
+                                    if (isValidIPAddress(clipboardContent) || isValidHostname(clipboardContent)) {
+                                        inputField.value = clipboardContent;
+                                        validateInput();  // 验证并可能更改样式
+                                    } else {
+                                        inputField.value = '';
+                                    }
+                                })
+                                .catch(err => {
+                                    console.error('Failed to read clipboard contents: ', err);
+                                    inputField.value = '';
+                                    alert('无法读取剪贴板内容，请确保您已授予访问权限。');
+                                });
+                        } else {
+                            // 用户拒绝
+                            inputField.value = '';
+                            alert('您拒绝了剪贴板访问权限。\n\n请在扩展程序设置中手动开启权限。');
+                        }
+                    });
+                }
             });
         }
     });
