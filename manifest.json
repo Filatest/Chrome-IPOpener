@@ -7,7 +7,7 @@
         "default_popup": "/content/ip_opener.html"
 
     },
-    "permissions": [ "storage", "tabs", "contextMenus", "activeTab", "scripting", "clipboardRead", "clipboardWrite"],
+    "permissions": [ "storage", "contextMenus", "activeTab", "clipboardRead"],
     "background": {
         "service_worker": "./background/background.js"
     }
