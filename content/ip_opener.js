@@ -16,10 +16,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // 在页面加载时检查剪贴板内容
         checkClipboardContent();
 
+        // 点击按钮时验证并打开浏览器
         connectButton.addEventListener('click', function () {
             validateAndOpenBrowser(inputField.value);
         });
 
+        // 添加回车键事件监听
         inputField.addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
                 validateAndOpenBrowser(inputField.value);
@@ -37,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
             inputField.placeholder = "Enter IP address or hostname";
         });
 
+        // 自动聚焦到输入框
+        inputField.focus();
 
         
         function validateAndOpenBrowser(ip) {
@@ -80,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (partialIpv4Regex.test(ip)) {
                 // 如果是部分地址，则尝试补全
                 fullIp = `${base_ip_prefix}.${ip}`; 
-                return true
+                return true;
             }
         
             return false;
