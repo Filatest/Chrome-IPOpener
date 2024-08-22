@@ -1,12 +1,14 @@
 {
     "manifest_version": 3,
     "name": "IP Address Opener",
-    "version": "1.0",
+    "version": "1.0.3",
+    "homepage_url": "https://chromewebstore.google.com/detail/ip-address-opener/fhgdpanbfjiklmpbgobmmpghfipfndkd",
     "description": "Open IP addresses in the browser.",
     "action": {
         "default_popup": "/content/ip_opener.html"
 
     },
+    "options_page": "/options/options.html",
     "permissions": [ "storage", "contextMenus", "activeTab", "clipboardRead"],
     "background": {
         "service_worker": "./background/background.js"
