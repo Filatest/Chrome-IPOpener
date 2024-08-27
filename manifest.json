@@ -5,7 +5,10 @@
     "homepage_url": "https://chromewebstore.google.com/detail/ip-address-opener/fhgdpanbfjiklmpbgobmmpghfipfndkd",
     "description": "帮助用户快捷打开特定协议、端口的IP地址",
     "action": {
-        "default_popup": "/content/ip_opener.html"
+        "default_popup": "/content/ip_opener.html",
+        "default_icon": {
+            "128": "/icons/icon128.png"
+        }
 
     },
     "options_page": "/options/options.html",
