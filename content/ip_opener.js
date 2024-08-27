@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // alert('有权限');
                     navigator.clipboard.readText()
                         .then(clipboardContent => {
-                            if (isValidIPAddress(clipboardContent) || isValidHostname(clipboardContent)) {
+                            if (isValidIPAddress(clipboardContent)) {  // 验证剪贴板内容为有效的 IP 地址不验证主机名
                                 inputField.value = clipboardContent;
                                 validateInput();  // 验证并可能更改样式
                             } else {
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             // 用户同意，读取剪贴板
                             navigator.clipboard.readText()
                                 .then(clipboardContent => {
-                                    if (isValidIPAddress(clipboardContent) || isValidHostname(clipboardContent)) {
+                                    if (isValidIPAddress(clipboardContent) ) {  // 验证剪贴板内容为有效的 IP 地址不验证主机名
                                         inputField.value = clipboardContent;
                                         validateInput();  // 验证并可能更改样式
                                     } else {
