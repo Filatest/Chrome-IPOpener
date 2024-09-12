@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "IP Address Opener",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "homepage_url": "https://chromewebstore.google.com/detail/ip-address-opener/fhgdpanbfjiklmpbgobmmpghfipfndkd",
     "description": "帮助用户快捷打开特定协议、端口的IP地址",
     "action": {
