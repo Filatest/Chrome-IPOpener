@@ -1,0 +1,60 @@
+# 忽略 Node.js 依赖项
+node_modules/
+
+# 忽略 Webpack 构建输出
+dist/
+build/
+
+# 忽略 Webpack 缓存和日志文件
+.cache/
+*.log
+
+# 忽略 macOS 系统生成的文件
+.DS_Store
+
+# 忽略 Windows 系统生成的临时文件
+Thumbs.db
+
+# 忽略 VS Code 用户特定的工作区文件
+.vscode/
+
+# 忽略 IntelliJ IDEA 用户特定的工作区文件
+.idea/
+*.iml
+
+# 忽略 NetBeans 用户特定的工作区文件
+nbproject/private/
+
+# 忽略 Eclipse 用户特定的工作区文件
+.project
+.classpath
+
+# 忽略其他 IDE 生成的文件
+*.swp
+*.bak
+*.tmp
+
+# 忽略 npm/yarn 生成的锁文件
+package-lock.json
+yarn.lock
+
+# 忽略环境变量文件
+.env
+.env.local
+.env.*.local
+
+# 忽略其他可能的敏感信息
+*.pem
+*.key
+*.cert
+*.csr
+
+# 忽略src/目录下的所有文件
+src/*
+
+
+# 忽略环境变量文件
+
+generate-entry-points.js
+package.json
+webpack.config.js
