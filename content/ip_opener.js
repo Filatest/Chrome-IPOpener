@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 点击按钮时验证并打开浏览器
         connectButton.addEventListener('click', function () {
-            validateAndOpenBrowser(inputField.value);
+            validateAndOpenBrowser(preprocessInput(inputField.value));
         });
 
         // 添加回车键事件监听
         inputField.addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
-                validateAndOpenBrowser(inputField.value);
+                validateAndOpenBrowser(preprocessInput(inputField.value));
             }
         });
 
@@ -41,6 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 自动聚焦到输入框
         inputField.focus();
+
+        function preprocessInput(input) { // 预处理输入内容
+            // 去除前后及中间的空格
+            input = input.replace(/\s+/g, '');
+            // 将中文句号（。）替换为英文句号（.）
+            input = input.replace(/。/g, '.');
+            return input;
+        }
 
         
         function validateAndOpenBrowser(ip) {
